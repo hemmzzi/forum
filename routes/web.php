@@ -15,5 +15,6 @@ route::get('/threads/create' , function() {
 });
 
 route::get('/' , function() {
-	return view('messages.hello',["name"=> "Hermann"]);
+	$name = "Hermann";
+	return view('messages.hello', compact("name"));
 });
