@@ -13,3 +13,7 @@ route::get('/threads' , function() {
 route::get('/threads/create' , function() {
 	return view('threads.create');
 });
+
+route::get('/' , function() {
+	return view('greeting');
+});
