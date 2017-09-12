@@ -4,6 +4,7 @@
 	<title></title>
 </head>
 <body>
-Hello, I'm Hermann
+	This is greeting number {{ $id }} with
+	{{ $count }} messages.
 </body>
 </html>
