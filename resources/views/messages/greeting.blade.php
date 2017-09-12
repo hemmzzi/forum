@@ -4,7 +4,7 @@
 	<title></title>
 </head>
 <body>
-	This is greeting number {{ $id }} with
-	{{ $count }} messages.
+	This is greeting number {{ $kalli }} with
+	
 </body>
 </html>

@@ -19,7 +19,8 @@ route::get('/' , function() {
 	return view('messages.hello', compact("name"));
 });
 
-route::get('/greeting/{id}/{count}' , function($id,$count) {
-	return view('messages.greeting',compact('id', 'count'));
-});
+route::get('/greeting/{id}' , function($id) {
+	$language = ["Bonjour","Ciao","Hallo","Hola","Salam"];
+	return view('messages.greeting',["kalli" => $language[$id]]);
+})->where(["id" => "[0-4]"]);
 
