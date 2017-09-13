@@ -4,7 +4,7 @@
 	<title></title>
 </head>
 <body>
-	This is greeting number {{ $kalli }} with
+	This is {{ $name }}
 	
 </body>
 </html>
