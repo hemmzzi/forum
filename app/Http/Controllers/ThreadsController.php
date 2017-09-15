@@ -8,7 +8,12 @@ class ThreadsController extends Controller
 {
     public function index()
     {
-		return view ("threads.index");
+    	$threads = [
+    		["title" => "Titill A ", "Body" => "Lorem Ipsum dolor set."],
+    		["title" => "Titill B", "Body" => "Þetta er B"]
+
+    	];
+		return view ("threads.index", compact("threads"));
     }
 
     public function create()
@@ -16,7 +21,7 @@ class ThreadsController extends Controller
 		return view ("threads.create");
     }
 
-    public function show()
+    public function show($id)
     {
 		return view ("threads.show");
     }
