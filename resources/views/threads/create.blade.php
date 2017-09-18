@@ -16,6 +16,15 @@
                         <br></br>
                         Body:
                         <br></br>
+                        @foreach ($countries as $country)
+                          @if ($country =="Ísland")
+                        <h1>{{ $country }}</h1>
+                        
+                        
+                        else
+                        <p>{{ $country }}</p>
+                        @endif
+                        @endforeach
                         <textarea rows="10" cols="95">
                         </textarea>
                         <button class="btn btn-primary" type="button">
@@ -28,3 +37,5 @@
     </div>
 </div>
 @endsection
+
+

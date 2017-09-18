@@ -8,10 +8,6 @@
                 <div class="panel-heading">Forum threads</div>
                     <div class="panel panel-default">
                       <div class="panel-body">
-                        @foreach ($threads as $thread)
-                        <h3>{{ $thread[ "title"] }}</h3>
-                        @endforeach
-
                            <div class="panel-body">
                               <div class="panel-body">
 

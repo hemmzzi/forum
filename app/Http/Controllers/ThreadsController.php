@@ -18,8 +18,10 @@ class ThreadsController extends Controller
 
     public function create()
     {
-		return view ("threads.create");
+    	$countries = ["Ísland","Ísland","Írland","Ísland","Írland"];
+		return view ("threads.create", compact("countries"));
     }
+
 
     public function show($id)
     {
