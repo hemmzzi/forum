@@ -5,18 +5,26 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Forum threads</div>
-                    <div class="panel panel-default">
-                      <div class="panel-body">
-                           <div class="panel-body">
-                              <div class="panel-body">
+                <div class="panel-heading">Forum Threads</div>
 
-                                     <h3></h3>
-                                </div>
+                <div class="panel-body">
+                    @foreach($threads as $thread)
+                        <article>
+                            <div>
+                                   <h4>
+                                        {{ $thread ->title }}
+                                    </h4>
+                                <h4>
+                                     {{ $thread ->body }}
+                                </h4>
                             </div>
-                        </div>
-                    </div>
-                 <div class="panel-body">
+                            <div class="body">
+                               
+                            </div>
+                        </article>
+                        <hr>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>

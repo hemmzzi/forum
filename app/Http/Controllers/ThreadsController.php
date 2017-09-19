@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -8,11 +9,8 @@ class ThreadsController extends Controller
 {
     public function index()
     {
-    	$threads = [
-    		["title" => "Titill A ", "Body" => "Lorem Ipsum dolor set."],
-    		["title" => "Titill B", "Body" => "Þetta er B"]
+    	$threads = DB::select("select * from threads");
 
-    	];
 		return view ("threads.index", compact("threads"));
     }
 
@@ -24,8 +22,10 @@ class ThreadsController extends Controller
 
 
     public function show($id)
-    {
-		return view ("threads.show");
+    { 
+    	$thread = DB::select("select * from threads where id=?",[$id]);
+    	
+		return view ("threads.show", compact("thread"));
     }
 
 }
