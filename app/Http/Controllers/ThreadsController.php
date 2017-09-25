@@ -27,5 +27,10 @@ class ThreadsController extends Controller
     	
 		return view ("threads.show", compact("thread"));
     }
+    public function store()
+    {
+
+    dd("Store method");
+    }
 
 }
