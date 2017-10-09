@@ -5,8 +5,9 @@ use Illuminate\Http\Request;
 use App\Thread;
 class ThreadsController extends Controller
 {
-    public function index()
+    public function index(request $request)
     {
+        return $request->fullurl();
         $threads = Thread::all();
         return view('threads.index', compact('threads'));
     }
@@ -22,6 +23,7 @@ class ThreadsController extends Controller
     }
     public function store(Request $request)
     {
+        //Validate
         $thread = new Thread;
         $thread->title = $request ->title;
         $thread->body = $request ->body;
