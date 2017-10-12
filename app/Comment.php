@@ -1,9 +1,12 @@
 <?php
+
 namespace App;
+
 use Illuminate\Database\Eloquent\Model;
-class Thread extends Model
+
+class Comment extends Model
 {
-    protected $table = 'threads';
+    protected $table = 'comment';
 }
     public function comments()
     {

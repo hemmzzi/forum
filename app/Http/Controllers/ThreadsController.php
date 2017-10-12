@@ -3,12 +3,20 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Thread;
+
 class ThreadsController extends Controller
 {
-    public function index(request $request)
+    public function __construct()
+
     {
-        return $request->fullurl();
-        $threads = Thread::all();
+
+        $this->middleware('auth')->only('create', 'store');
+    }
+
+
+    public function index()
+    {
+        $threads = Thread::latest()->get();
         return view('threads.index', compact('threads'));
     }
     public function create()
@@ -27,7 +35,7 @@ class ThreadsController extends Controller
         $thread = new Thread;
         $thread->title = $request ->title;
         $thread->body = $request ->body;
-        $thread->user_id = 1;
+        $thread->user_id = auth()->id();
         $thread->save();
 
         return redirect('/threads');
